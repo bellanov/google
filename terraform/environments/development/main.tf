@@ -10,8 +10,8 @@ resource "google_project_service" "service" {
 }
 
 resource "google_service_account" "service_account" {
-  for_each    = local.service_accounts
-  project     = var.project_id
+  for_each     = local.service_accounts
+  project      = var.project_id
   account_id   = each.key
   display_name = each.value.description
 }
@@ -39,7 +39,7 @@ locals {
 
     ops = {
       description = "Ops Service Account"
-      roles = []
+      roles       = []
     }
   }
 }
