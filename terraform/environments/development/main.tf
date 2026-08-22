@@ -13,6 +13,7 @@ resource "google_service_account" "service_account" {
   for_each     = local.service_accounts
   project      = var.project_id
   account_id   = each.key
+  description = each.value.description
   display_name = each.value.description
 }
 
