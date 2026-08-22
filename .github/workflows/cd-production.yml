@@ -4,9 +4,13 @@ name: "🚀 CD: Production"
 
 on:
   push:
-    branches: ["production"]
+    branches: ["main"]
+    paths:
+      - "terraform/environments/production/**"
   pull_request:
-    branches: ["production"]
+    branches: ["main"]
+    paths:
+      - "terraform/environments/production/**"
 
 permissions:
   contents: read
@@ -32,7 +36,7 @@ jobs:
       # Authenticate with Google Cloud
       - uses: 'google-github-actions/auth@v3'
         with:
-          project_id: 'gcp-development-503118'
+          project_id: 'gcp-production-503118'
           workload_identity_provider: 'projects/59255497383/locations/global/workloadIdentityPools/github/providers/google'
 
       # Install the latest version of Terraform CLI
@@ -51,10 +55,10 @@ jobs:
       - name: Terraform Plan
         run: terraform plan -input=false
 
-      # On push to "production", build or change infrastructure according to Terraform configuration files
+      # On push to "main", build or change infrastructure according to Terraform configuration files
       # Note: It is recommended to set up a required "strict" status check in your repository for "Terraform Cloud". See the documentation on "strict" required status checks for more information: https://github.com/en/github/administering-a-repository/types-of-required-status-checks
       - name: Terraform Apply
-        if: github.ref == 'refs/heads/production' && github.event_name == 'push'
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: terraform apply -auto-approve -input=false
 
       # Clean up credentials file
