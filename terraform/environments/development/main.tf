@@ -10,8 +10,10 @@ resource "google_project_service" "service" {
 }
 
 resource "google_service_account" "service_account" {
-  account_id   = "developer"
-  display_name = "Service Account for local development"
+  for_each    = local.service_accounts
+  project     = var.project_id
+  account_id   = each.key
+  display_name = each.value.description
 }
 
 locals {
@@ -20,11 +22,24 @@ locals {
   # TODO: Dynamically generate service accounts and roles based on a map of service accounts and their roles
   service_accounts = {
     developer = {
+      description = "Developer Service Account"
       roles = [
         "roles/iam.serviceAccountUser",
         "roles/iam.serviceAccountTokenCreator",
         "roles/iam.workloadIdentityUser",
       ]
+    }
+
+    tester = {
+      description = "Tester Service Account"
+      roles = [
+        "roles/iam.serviceAccountUser"
+      ]
+    }
+
+    ops = {
+      description = "Ops Service Account"
+      roles = []
     }
   }
 }
