@@ -4,8 +4,6 @@
 
 gcloud config set project $GCP_PROJECT
 
-SERVICE_ACCOUNT="github-actions"
-
 if gcloud iam service-accounts create "$SERVICE_ACCOUNT" \
         --description="Deployment service account for GitHub Actions" \
         --display-name="GitHub Actions Deployment Service Account"; then

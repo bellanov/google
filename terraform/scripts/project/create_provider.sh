@@ -6,9 +6,9 @@ IDENTITY_POOL="${1}"
 
 gcloud config set project $GCP_PROJECT
 
-gcloud iam workload-identity-pools providers create-oidc "google" \
+gcloud iam workload-identity-pools providers create-oidc "${GITHUB_REPO}" \
   --location="global" \
-  --workload-identity-pool="github" \
+  --workload-identity-pool="${WORKLOAD_IDENTITY_POOL}" \
   --display-name="My GitHub repo Provider" \
   --attribute-mapping="google.subject=assertion.sub,attribute.actor=assertion.actor,attribute.repository=assertion.repository,attribute.repository_owner=assertion.repository_owner" \
   --attribute-condition="assertion.repository_owner == '${GITHUB_ORG}'" \
@@ -16,5 +16,5 @@ gcloud iam workload-identity-pools providers create-oidc "google" \
 
 gcloud iam workload-identity-pools providers describe "google" \
   --location="global" \
-  --workload-identity-pool="github" \
+  --workload-identity-pool="${WORKLOAD_IDENTITY_POOL}" \
   --format="value(name)"

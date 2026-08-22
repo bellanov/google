@@ -68,7 +68,9 @@ In this setup, the Workload Identity Pool has direct IAM permissions on Google C
 
 ## Environment Variables
 
-The project relies on *environment variables* to execute. Rarely, these variables are hardcoded in the source code. Instead, they are set in the `.env.<environment>` files.
+The project relies on *environment variables* to execute. There are no default values, so be sure these values are defined wherever they are relevant.
+
+Instead, they are set in the `.env.<environment>` files.
 
 ```sh
 # Project
