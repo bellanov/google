@@ -11,7 +11,7 @@ gcloud projects add-iam-policy-binding $GCP_PROJECT \
   --role="roles/serviceusage.serviceUsageAdmin"
 
 # Grant permissions to impersonate the service account
-gcloud iam service-accounts add-iam-policy-binding "$SERVICE_ACCOUNT" \
+gcloud iam service-accounts add-iam-policy-binding "$SERVICE_ACCOUNT_EMAIL" \
   --role="roles/iam.workloadIdentityUser" \
   --member="${REPO_PRINCIPAL}"
 
