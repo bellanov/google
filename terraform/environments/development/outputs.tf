@@ -6,5 +6,5 @@ output "services" {
 
 output "service_accounts" {
   description = "List of created service accounts"
-  value       = { for sa in resource.google_service_account.service_account : sa.id => sa }
+  value       = { for sa in resource.google_service_account.service_account : sa.account_id => sa }
 }
