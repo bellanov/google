@@ -37,8 +37,8 @@ locals {
       ]
     }
 
-    ops = {
-      description = "Ops Service Account"
+    operations = {
+      description = "Operations Service Account"
       roles       = []
     }
   }
