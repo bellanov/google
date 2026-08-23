@@ -37,7 +37,7 @@ jobs:
       - uses: 'google-github-actions/auth@v3'
         with:
           project_id: 'gcp-staging-503118'
-          workload_identity_provider: 'projects/59255497383/locations/global/workloadIdentityPools/github/providers/google'
+          workload_identity_provider: 'projects/291019302927/locations/global/workloadIdentityPools/github/providers/google'
 
       # Install the latest version of Terraform CLI
       - name: Setup Terraform
