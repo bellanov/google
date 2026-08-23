@@ -18,6 +18,8 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 dependencies = [
+    "google-api-python-client",
+    "google-cloud-resource-manager",
     "httpx",
     "tenacity",
 ]
@@ -27,8 +29,6 @@ dev = [
     "black",
     "coverage",
     "flake8",
-    "google-api-python-client",
-    "google-cloud-resource-manager",
     "ipython",
     "isort",
     "mypy",
