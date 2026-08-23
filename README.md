@@ -6,6 +6,8 @@
 
 The project is deployed across multiple *environments*, each of which has its own Terraform configuration.
 
+![Environments](./diagrams/Environments.svg)
+
 | Environment | Description |
 | ----------- | ----------------------------------------------------------------- |
 | _development_ | Development environment for testing and experimentation.          |
@@ -18,7 +20,7 @@ The project is deployed across multiple *environments*, each of which has its ow
 
 The project _architecture_ is summarized below.
 
-![Project Architecture](./diagrams/Project.svg)
+![Project Architecture](./diagrams/MVC.svg)
 
 ## Project Structure
 
