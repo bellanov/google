@@ -1,6 +1,7 @@
 terraform {
   backend "gcs" {
-    bucket = "terraform-state-503118"
+    bucket = "gcp-staging-503118"
+    prefix = "terraform/state"
   }
 
   required_providers {

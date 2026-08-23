@@ -9,5 +9,5 @@ if gcloud iam service-accounts create "$SERVICE_ACCOUNT" \
         --display-name="GitHub Actions Deployment Service Account"; then
     echo "Service account $SERVICE_ACCOUNT created."
 else
-    echo "Failure creating Service Account { $SERVICE_ACCOUNT } already exists."
+    echo "Failure creating Service Account { $SERVICE_ACCOUNT }."
 fi

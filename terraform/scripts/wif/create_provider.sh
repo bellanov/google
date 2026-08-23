@@ -14,6 +14,8 @@ gcloud iam workload-identity-pools providers create-oidc "${GITHUB_REPO}" \
   --attribute-condition="assertion.repository_owner == '${GITHUB_ORG}'" \
   --issuer-uri="https://token.actions.githubusercontent.com"
 
+sleep 3
+
 gcloud iam workload-identity-pools providers describe "google" \
   --location="global" \
   --workload-identity-pool="${WORKLOAD_IDENTITY_POOL}" \
