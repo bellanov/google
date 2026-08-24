@@ -2,7 +2,7 @@
 
 # from google.cloud import resourcemanager_v3
 
-from cli.domain.models.project import Project
+from tui.domain.models.project import Project
 
 
 def get_project(project_id: str, name: str, organization_id: str) -> Project:
@@ -16,4 +16,4 @@ def get_project(project_id: str, name: str, organization_id: str) -> Project:
     Returns:
         A Project object.
     """
-    return Project(id=project_id, name=name, organization_id=organization_id)
+    pass

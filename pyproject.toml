@@ -18,8 +18,11 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 dependencies = [
+    "google-api-python-client",
+    "google-cloud-resource-manager",
     "httpx",
     "tenacity",
+    "textual"
 ]
 
 [project.optional-dependencies]
@@ -27,17 +30,17 @@ dev = [
     "black",
     "coverage",
     "flake8",
-    "google-api-python-client",
-    "google-cloud-resource-manager",
     "ipython",
     "isort",
     "mypy",
     "pydantic",
-    "pytest", 
+    "pytest",
+    "textual-dev",
+    "textual[syntax]"
 ]
 
 [tool.hatch.build.targets.wheel]
-packages = ["cli/"]
+packages = ["tui/"]
 
 [project.urls]
 Homepage = "https://github.com/bellanov/gcp"

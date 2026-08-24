@@ -2,7 +2,7 @@
 
 from pydantic import Field
 
-from cli.domain.models.pydantic import CamelCaseModel
+from tui.domain.models.pydantic import CamelCaseModel
 
 GCP_PROJECT = r"^[a-z0-9-]+$"
 
