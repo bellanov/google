@@ -19,8 +19,8 @@ ORGANIZATION_MARKDOWN = f"""\
 
 ## Organization
 
-|             |                         |
-| --------------- | ---------------------------- |
-| name      | {ORGANIZATION.name}   |
-| display_name   | {ORGANIZATION.display_name}   |
+|                   |                               |
+| ---------------   | ----------------------------  |
+| name              | {ORGANIZATION.name}           |
+| display_name      | {ORGANIZATION.display_name}   |
 """
