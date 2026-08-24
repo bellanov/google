@@ -18,22 +18,14 @@ The project is deployed across multiple *environments*, each of which has its ow
 
 ### Environment Variables
 
-The project relies on *environment variables* to execute. There are no default values, so be sure these values are defined wherever they are relevant.
+The project relies on *environment variables* to execute.
+
+Be sure to be authenticated (via `gcloud auth login`) and define the `$GCP_PROJECT` and `$GCP_ORGANIZATION` variables.
 
 ```sh
 # Project
-GCP_PROJECT=gcp-development-12345
-GCP_ORGANIZATION=12345678901
-GITHUB_ORG=bellanov
-GITHUB_REPO=google
-
-# Workload Identity Federation (WIF)
-PROJECT_NUMBER=$(gcloud projects describe $GCP_PROJECT --format=value\(projectNumber\))
-WORKLOAD_IDENTITY_POOL="github"
-SERVICE_ACCOUNT="github-actions"
-SERVICE_ACCOUNT_EMAIL="github-actions@${GCP_PROJECT}.iam.gserviceaccount.com"
-WIF_PRINCIPAL="principalSet://iam.googleapis.com/projects/${PROJECT_NUMBER}/locations/global/workloadIdentityPools/${WORKLOAD_IDENTITY_POOL}/*"
-REPO_PRINCIPAL="principalSet://iam.googleapis.com/projects/${PROJECT_NUMBER}/locations/global/workloadIdentityPools/${WORKLOAD_IDENTITY_POOL}/attribute.repository/${GITHUB_REPO}"
+export GCP_PROJECT=gcp-development-12345
+export GCP_ORGANIZATION=12345678901
 ```
 
 ### Workload Identity Federation
