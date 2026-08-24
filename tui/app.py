@@ -5,7 +5,7 @@ import os
 from textual.app import App, ComposeResult
 from textual.widgets import Markdown
 
-from tui.domain.views.organization import ORGANIZATION_MARKDOWN
+from tui.domain.controllers.organization import ORGANIZATION_MARKDOWN
 
 
 class TUIApp(App):
