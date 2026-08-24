@@ -1,6 +1,6 @@
 # google
 
-**Command Line Interface (CLI)** to bootstrap development on _Google Cloud Platform (GCP)_.
+**Terminal User Interface (TUI)** to visualize _Google Cloud Platform (GCP)_ resources.
 
 ## Environments
 

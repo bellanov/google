@@ -2,7 +2,7 @@
 
 from typing import Generator
 
-from cli.domain.models.folder import Folder
+from tui.domain.models.folder import Folder
 from google.cloud import resourcemanager_v3
 
 

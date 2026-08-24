@@ -37,7 +37,7 @@ dev = [
 ]
 
 [tool.hatch.build.targets.wheel]
-packages = ["cli/"]
+packages = ["tui/"]
 
 [project.urls]
 Homepage = "https://github.com/bellanov/gcp"
