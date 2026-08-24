@@ -5,15 +5,13 @@
 from tui.domain.models.project import Project
 
 
-def get_project(project_id: str, name: str, organization_id: str) -> Project:
-    """Get a project by ID.
+def get_projects_for_organization(organization_id: str) -> list[Project]:
+    """Get projects for an organization.
 
     Args:
-        project_id: The ID of the project.
-        name: The name of the project.
-        organization_id: The ID of the organization the project belongs to.
+        organization_id: The ID of the organization the projects belong to.
 
     Returns:
-        A Project object.
+        A list of Project objects.
     """
     pass

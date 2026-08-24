@@ -10,6 +10,7 @@ GCP_ORGANIZATION = os.environ.get("GCP_ORGANIZATION")
 if not GCP_ORGANIZATION:
     raise EnvironmentVariableError("GCP_ORGANIZATION environment variable is not set.")
 
+
 ORGANIZATION = get_organization(GCP_ORGANIZATION)
 print(f"Organization: {ORGANIZATION}")
 
