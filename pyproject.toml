@@ -22,6 +22,7 @@ dependencies = [
     "google-cloud-resource-manager",
     "httpx",
     "tenacity",
+    "textual"
 ]
 
 [project.optional-dependencies]
@@ -33,7 +34,9 @@ dev = [
     "isort",
     "mypy",
     "pydantic",
-    "pytest", 
+    "pytest",
+    "textual-dev",
+    "textual[syntax]"
 ]
 
 [tool.hatch.build.targets.wheel]

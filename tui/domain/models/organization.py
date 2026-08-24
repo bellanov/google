@@ -2,9 +2,9 @@
 
 from pydantic import Field
 
-from cli.domain.models.pydantic import CamelCaseModel
+from tui.domain.models.pydantic import CamelCaseModel
 
-GCP_ORGANIZATION = r"^[a-z0-9-]+$"
+GCP_ORGANIZATION = r"^organizations/\d+$"
 
 
 class Organization(CamelCaseModel):
@@ -13,7 +13,8 @@ class Organization(CamelCaseModel):
     Attributes:
         id: The ID of the organization.
         name: The name of the organization.
+        display_name: The display name of the organization.
     """
 
-    id: str = Field(..., pattern=GCP_ORGANIZATION)
-    name: str
+    name: str = Field(..., pattern=GCP_ORGANIZATION)
+    display_name: str

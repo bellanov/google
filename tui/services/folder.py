@@ -2,21 +2,8 @@
 
 from typing import Generator
 
-from tui.domain.models.folder import Folder
 from google.cloud import resourcemanager_v3
-
-
-def get_folder(id: str, folder_name: str) -> Folder:
-    """Get a folder by name.
-
-    Args:
-        id: The ID of the folder.
-        folder_name: The name of the folder.
-
-    Returns:
-        A Folder object.
-    """
-    pass
+from tui.domain.models.folder import Folder
 
 
 def get_folders_for_organization(organization_id: str) -> Generator[Folder, None, None]:

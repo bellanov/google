@@ -16,4 +16,4 @@ def get_project(project_id: str, name: str, organization_id: str) -> Project:
     Returns:
         A Project object.
     """
-    return Project(id=project_id, name=name, organization_id=organization_id)
+    pass
