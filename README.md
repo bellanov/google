@@ -1,6 +1,6 @@
 # google
 
-**Terminal User Interface (TUI)** to visualize _Google Cloud Platform (GCP)_ resources.
+**Terminal User Interface (TUI)** to visualize resources on _Google Cloud Platform (GCP)_.
 
 ## Environments
 
@@ -23,7 +23,6 @@ The project relies on *environment variables* to execute.
 Be sure to be authenticated (via `gcloud auth login`) and define the `$GCP_PROJECT` and `$GCP_ORGANIZATION` variables.
 
 ```sh
-# Project
 export GCP_PROJECT=gcp-development-12345
 export GCP_ORGANIZATION=12345678901
 ```
