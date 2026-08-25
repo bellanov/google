@@ -29,12 +29,6 @@ class TUIApp(App):
     }
     """
 
-    # BINDINGS = [
-    #     ("<-", "add", "Add tab"),
-    #     ("r", "remove", "Remove active tab"),
-    #     ("c", "clear", "Clear tabs"),
-    # ]
-
     def compose(self) -> ComposeResult:
 
         with TabbedContent():
