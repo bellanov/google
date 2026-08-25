@@ -1,18 +1,23 @@
 # This workflow will install Python dependencies, run tests and lint with a variety of Python versions
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
 
-name: "🧪 CI: Development"
+name: "🧪 CI: Staging"
 
 on:
   pull_request:
     branches: ["main"]
     paths:
-      - "cli"
+      - "tui"
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    environment: development
+    environment: staging
+
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.14"]
 
     env:
       GCP_PROJECT_ID: ${{ vars.GCP_PROJECT_ID }}
@@ -24,10 +29,10 @@ jobs:
     steps:
       - uses: actions/checkout@v7
 
-      - name: Set up Python 3.14
+      - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v6
         with:
-          python-version: "3.14"
+          python-version: ${{ matrix.python-version }}
 
       - name: Install Dependencies
         run: |
@@ -36,8 +41,8 @@ jobs:
 
       - name: Lint with flake8, black, isort
         run: |
-          cli/scripts/ci/lint.sh
+          cli/scripts/lint.sh
 
       - name: Test with pytest
         run: |
-          cli/scripts/ci/test.sh
+          cli/scripts/test.sh

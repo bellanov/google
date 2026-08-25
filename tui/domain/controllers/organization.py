@@ -1,5 +1,6 @@
 """Organization View."""
 
+import logging
 import os
 
 from tui.domain.models.errors import EnvironmentVariableError
@@ -11,16 +12,18 @@ if not GCP_ORGANIZATION:
     raise EnvironmentVariableError("GCP_ORGANIZATION environment variable is not set.")
 
 
-ORGANIZATION = get_organization(GCP_ORGANIZATION)
-print(f"Organization: {ORGANIZATION}")
+def get_organization_markdown() -> str:
+    ORGANIZATION = get_organization(GCP_ORGANIZATION)
 
-ORGANIZATION_MARKDOWN = f"""\
-## {ORGANIZATION.display_name}
+    logging.info(f"Organization: {ORGANIZATION}")
 
-## Organization
+    MARKDOWN = f"""## {ORGANIZATION.display_name}
 
-|                   |                               |
-| ---------------   | ----------------------------  |
-| name              | {ORGANIZATION.name}           |
-| display_name      | {ORGANIZATION.display_name}   |
+| Name | Display Name |
+| --- | --- |
+| {ORGANIZATION.name} | {ORGANIZATION.display_name} |
 """
+    return MARKDOWN
+
+
+ORGANIZATION_MARKDOWN = get_organization_markdown()
