@@ -3,17 +3,54 @@
 import os
 
 from textual.app import App, ComposeResult
-from textual.widgets import Markdown
+from textual.widgets import (
+    Footer,
+    Header,
+    Label,
+    Markdown,
+    TabbedContent,
+    TabPane,
+    Tabs,
+)
 
 from tui.domain.controllers.organization import ORGANIZATION_MARKDOWN
+
+TABS = ["Organization", "Project", "Folder"]
 
 
 class TUIApp(App):
 
+    CSS = """
+    Tabs {
+        dock: top;
+    }
+    Screen {
+        align: center middle;
+    }
+    """
+
+    # BINDINGS = [
+    #     ("<-", "add", "Add tab"),
+    #     ("r", "remove", "Remove active tab"),
+    #     ("c", "clear", "Clear tabs"),
+    # ]
+
     def compose(self) -> ComposeResult:
+
+        with TabbedContent():
+            for tab in TABS:
+                with TabPane(tab):
+                    yield Markdown(ORGANIZATION_MARKDOWN)
+
         markdown = Markdown(ORGANIZATION_MARKDOWN)
         markdown.code_indent_guides = False
-        yield markdown
+
+        yield Footer()
+        yield Header("google")
+
+    def on_mount(self) -> None:
+        self.title = "google"
+        self.sub_title = "Google Cloud Platform"
 
 
 if __name__ == "__main__":

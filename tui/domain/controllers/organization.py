@@ -10,16 +10,19 @@ GCP_ORGANIZATION = os.environ.get("GCP_ORGANIZATION")
 if not GCP_ORGANIZATION:
     raise EnvironmentVariableError("GCP_ORGANIZATION environment variable is not set.")
 
-ORGANIZATION = get_organization(GCP_ORGANIZATION)
-print(f"Organization: {ORGANIZATION}")
 
-ORGANIZATION_MARKDOWN = f"""\
-## {ORGANIZATION.display_name}
+def get_organization_markdown() -> str:
+    ORGANIZATION = get_organization(GCP_ORGANIZATION)
+    print(f"Organization: {ORGANIZATION}")
 
-## Organization
+    MARKDOWN = f"""## {ORGANIZATION.display_name}
 
-|                   |                               |
-| ---------------   | ----------------------------  |
-| name              | {ORGANIZATION.name}           |
-| display_name      | {ORGANIZATION.display_name}   |
+| Field | Value |
+| --- | --- |
+| name | {ORGANIZATION.name} |
+| display_name | {ORGANIZATION.display_name} |
 """
+    return MARKDOWN
+
+
+ORGANIZATION_MARKDOWN = get_organization_markdown()
