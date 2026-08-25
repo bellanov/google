@@ -40,7 +40,7 @@ class TUIApp(App):
         markdown.code_indent_guides = False
 
         yield Footer()
-        yield Header("google")
+        yield Header()
 
     def on_mount(self) -> None:
         self.title = "google"
