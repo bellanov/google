@@ -7,19 +7,12 @@ on:
   pull_request:
     branches: ["main"]
     paths:
-      - "tui"
+      - "tui/**"
 
 jobs:
   build:
     runs-on: ubuntu-latest
     environment: development
-
-    env:
-      GCP_PROJECT_ID: ${{ vars.GCP_PROJECT_ID }}
-      GCP_PROJECT_NAME: ${{ vars.GCP_PROJECT_NAME }}
-      GCP_FOLDER_NAME: ${{ vars.GCP_FOLDER_NAME }}
-      GCP_FOLDER_ID: ${{ vars.GCP_FOLDER_ID }}
-      GCP_ORGANIZATION_ID: ${{ vars.GCP_ORGANIZATION_ID }}
 
     steps:
       - uses: actions/checkout@v7
@@ -36,8 +29,8 @@ jobs:
 
       - name: Lint with flake8, black, isort
         run: |
-          cli/scripts/lint.sh
+          tui/scripts/lint.sh
 
       - name: Test with pytest
         run: |
-          cli/scripts/test.sh
+          tui/scripts/test.sh
