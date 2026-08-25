@@ -13,7 +13,7 @@ resource "google_service_account" "service_account" {
   display_name = each.value.description
 }
 
-# TODO: Add a policy to restrict the maximum age of service account keys to enhance security. 
+# TODO: Add a policy to restrict the maximum age of service account keys to enhance security.
 # resource "google_org_policy_policy" "allowed_sa_key_age" {
 #   name   = "organizations/YOUR_ORG_ID/policies/iam.allowedServiceAccountKeyAge"
 #   parent = "organizations/YOUR_ORG_ID"
