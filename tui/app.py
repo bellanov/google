@@ -47,3 +47,5 @@ class TUIApp(App):
 if __name__ == "__main__":
     app = TUIApp()
     app.run()
+
+pass
