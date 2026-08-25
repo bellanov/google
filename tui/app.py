@@ -1,21 +1,21 @@
 """Terminal User Interface (TUI)."""
 
-import os
-
 from textual.app import App, ComposeResult
 from textual.widgets import (
     Footer,
     Header,
-    Label,
     Markdown,
     TabbedContent,
     TabPane,
-    Tabs,
 )
 
 from tui.domain.controllers.organization import ORGANIZATION_MARKDOWN
 
-TABS = ["Organization", "Project", "Folder"]
+TABS = {
+    "Organization": ORGANIZATION_MARKDOWN,
+    "Project": ORGANIZATION_MARKDOWN,
+    "Folder": ORGANIZATION_MARKDOWN,
+}
 
 
 class TUIApp(App):
@@ -34,10 +34,7 @@ class TUIApp(App):
         with TabbedContent():
             for tab in TABS:
                 with TabPane(tab):
-                    yield Markdown(ORGANIZATION_MARKDOWN)
-
-        markdown = Markdown(ORGANIZATION_MARKDOWN)
-        markdown.code_indent_guides = False
+                    yield Markdown(TABS[tab])
 
         yield Footer()
         yield Header()

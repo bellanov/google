@@ -1,5 +1,6 @@
 """Organization View."""
 
+import logging
 import os
 
 from tui.domain.models.errors import EnvironmentVariableError
@@ -13,14 +14,14 @@ if not GCP_ORGANIZATION:
 
 def get_organization_markdown() -> str:
     ORGANIZATION = get_organization(GCP_ORGANIZATION)
-    print(f"Organization: {ORGANIZATION}")
+
+    logging.info(f"Organization: {ORGANIZATION}")
 
     MARKDOWN = f"""## {ORGANIZATION.display_name}
 
-| Field | Value |
+| Name | Display Name |
 | --- | --- |
-| name | {ORGANIZATION.name} |
-| display_name | {ORGANIZATION.display_name} |
+| {ORGANIZATION.name} | {ORGANIZATION.display_name} |
 """
     return MARKDOWN
 
