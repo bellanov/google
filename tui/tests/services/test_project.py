@@ -4,7 +4,7 @@ import os
 
 import pytest
 
-from tui.services.project import get_project
+from tui.services.project import get_projects_for_organization
 
 
 @pytest.mark.integration
