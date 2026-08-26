@@ -1,0 +1,13 @@
+#google-header {
+    content-align: center middle;
+    height: 8;
+    text-style: bold;
+}
+
+Tabs {
+    dock: top;
+}
+
+Screen {
+    align: center middle;
+}

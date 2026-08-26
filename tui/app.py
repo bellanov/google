@@ -13,12 +13,15 @@ from textual.widgets import (
 )
 
 from tui.domain.controllers.organization import ORGANIZATION_MARKDOWN
+from tui.domain.controllers.project import PROJECTS_MARKDOWN
 
 TABS = {
     "Organization": ORGANIZATION_MARKDOWN,
-    "Projects": ORGANIZATION_MARKDOWN,
     "Folders": ORGANIZATION_MARKDOWN,
+    "Projects": PROJECTS_MARKDOWN,
 }
+
+print(f"TABS: {TABS}")
 
 GOOGLE_BANNER_TEXT = [
     ("G", "#4285F4"),  # G - Blue
@@ -37,19 +40,7 @@ GOOGLE_BANNER_TEXT = [
 
 class TUIApp(App):
 
-    CSS = """
-    #google-header {
-        content-align: center middle;
-        height: 8;
-        text-style: bold;
-    }
-    Tabs {
-        dock: top;
-    }
-    Screen {
-        align: center middle;
-    }
-    """
+    CSS_PATH = "app.css"
 
     def compose(self) -> ComposeResult:
         yield Static(Text.assemble(*GOOGLE_BANNER_TEXT), id="google-header")

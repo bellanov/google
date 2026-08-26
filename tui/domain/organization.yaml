@@ -1,0 +1,36 @@
+
+bellanov.com:
+  type: Organization
+  id: 105637539410
+  name: Bellanov LLC
+  folders:
+    - type: Folder
+      id: 567127567191
+      name: Development
+      folders:
+        - type: Folder
+          id: 283856628432
+          name: Backend
+          folders:
+            - type: Folder
+              id: 569065457832
+              name: gcp-development
+              projects:
+                - type: Project
+                  id: gcp-development-503118
+                  name: Database
+        - type: Folder
+          id: 1093871496029
+          name: Frontend
+    - type: Folder
+      id: 674304753621
+      name: Staging
+    - type: Folder
+      id: 1009925575632
+      name: Production
+    - type: Folder
+      id: 976076073412
+      name: Shared
+    - type: Folder
+      id: 120649402532
+      name: Staging
