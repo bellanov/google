@@ -50,9 +50,9 @@ COMPONENTS = {
     "Header": {
         "Google": Container(
             Static(Text.assemble(*GOOGLE_BANNER_TEXT), id="google-header"),
-            id="header-container"
+            id="header-container",
         ),
-    }
+    },
 }
 
 
@@ -69,8 +69,6 @@ class TUIApp(App):
                     yield COMPONENTS["Tabs"][tab]
 
         yield Footer()
-
- 
 
 
 if __name__ == "__main__":
