@@ -1,9 +1,10 @@
 """Terminal User Interface (TUI)."""
 
 from rich.text import Text
-
 from textual.app import App, ComposeResult
+from textual.containers import Container, Horizontal
 from textual.widgets import (
+    Button,
     Footer,
     Header,
     Markdown,
@@ -14,14 +15,7 @@ from textual.widgets import (
 
 from tui.domain.controllers.organization import ORGANIZATION_MARKDOWN
 from tui.domain.controllers.project import PROJECTS_MARKDOWN
-
-TABS = {
-    "Organization": ORGANIZATION_MARKDOWN,
-    "Folders": ORGANIZATION_MARKDOWN,
-    "Projects": PROJECTS_MARKDOWN,
-}
-
-print(f"TABS: {TABS}")
+from tui.domain.views.folder import get_folder_view
 
 GOOGLE_BANNER_TEXT = [
     ("G", "#4285F4"),  # G - Blue
@@ -31,31 +25,52 @@ GOOGLE_BANNER_TEXT = [
     ("l", "#34A853"),  # l - Green
     ("e", "#EA4335"),  # e - Red
     (" ", "#FFFFFF"),  # Space
-    ("C", "#4285F4"),  # C - Dark Gray
-    ("l", "#4285F4"),  # l - Dark Gray
-    ("o", "#4285F4"),  # o - Dark Gray
-    ("u", "#4285F4"),  # u - Dark Gray
-    ("d", "#4285F4"),  # d - Dark Gray
+    ("C", "#4285F4"),  # C - Blue
+    ("l", "#4285F4"),  # l - Blue
+    ("o", "#4285F4"),  # o - Blue
+    ("u", "#4285F4"),  # u - Blue
+    ("d", "#4285F4"),  # d - Blue
+    (" ", "#FFFFFF"),  # Space
+    ("P", "#4285F4"),  # P - Blue
+    ("l", "#4285F4"),  # l - Blue
+    ("a", "#4285F4"),  # a - Blue
+    ("t", "#4285F4"),  # t - Blue
+    ("f", "#4285F4"),  # f - Blue
+    ("o", "#4285F4"),  # o - Blue
+    ("r", "#4285F4"),  # r - Blue
+    ("m", "#4285F4"),  # m - Blue
 ]
+
+COMPONENTS = {
+    "Tabs": {
+        "Organization": Container(Markdown(ORGANIZATION_MARKDOWN), id="organization"),
+        "Folders": Container(get_folder_view(), id="folder"),
+        "Projects": Container(Markdown(PROJECTS_MARKDOWN), id="projects"),
+    },
+    "Header": {
+        "Google": Container(
+            Static(Text.assemble(*GOOGLE_BANNER_TEXT), id="google-header"),
+            id="header-container"
+        ),
+    }
+}
+
 
 class TUIApp(App):
 
-    CSS_PATH = "app.css"
+    CSS_PATH = "app.tcss"
 
     def compose(self) -> ComposeResult:
-        yield Static(Text.assemble(*GOOGLE_BANNER_TEXT), id="google-header")
+        yield COMPONENTS["Header"]["Google"]
 
         with TabbedContent():
-            for tab in TABS:
+            for tab in COMPONENTS["Tabs"]:
                 with TabPane(tab):
-                    yield Markdown(TABS[tab])
+                    yield COMPONENTS["Tabs"][tab]
 
         yield Footer()
-        yield Header()
 
-    def on_mount(self) -> None:
-        self.title = "GCP"
-        self.sub_title = "Google Cloud Platform"
+ 
 
 
 if __name__ == "__main__":

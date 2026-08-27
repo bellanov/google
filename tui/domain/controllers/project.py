@@ -13,7 +13,9 @@ if not GCP_ORGANIZATION:
 
 
 def get_projects_markdown() -> str:
-    PROJECTS = get_projects_for_folder("569065457832")  # TODO: Replace with dynamic folder_id
+    PROJECTS = get_projects_for_folder(
+        "569065457832"
+    )  # TODO: Replace with dynamic folder_id
 
     logging.info(f"Projects: {PROJECTS}")
 

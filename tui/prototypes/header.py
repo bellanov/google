@@ -1,6 +1,6 @@
+from rich.text import Text
 from textual.app import App, ComposeResult
 from textual.widgets import Static
-from rich.text import Text
 
 GOOGLE_BANNER_TEXT = [
     ("G", "#4285F4"),  # G - Blue
@@ -17,6 +17,7 @@ GOOGLE_BANNER_TEXT = [
     ("d", "#4285F4"),  # d - Dark Gray
 ]
 
+
 class GoogleHeaderApp(App):
     CSS = """
     #custom-header {
@@ -28,6 +29,7 @@ class GoogleHeaderApp(App):
 
     def compose(self) -> ComposeResult:
         yield Static(Text.assemble(*GOOGLE_BANNER_TEXT), id="custom-header")
+
 
 if __name__ == "__main__":
     GoogleHeaderApp().run()
