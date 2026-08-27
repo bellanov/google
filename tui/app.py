@@ -10,12 +10,10 @@ from textual.widgets import (
 
 from tui.domain.views.folders import get_folders_view
 from tui.domain.views.header import get_google_header_view
-from tui.domain.views.organization import get_organization_view
 from tui.domain.views.projects import get_projects_view
 
 COMPONENTS = {
     "Tabs": {
-        "Organization": get_organization_view(),
         "Folders": get_folders_view(),
         "Projects": get_projects_view(),
     },

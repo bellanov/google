@@ -1,10 +1,14 @@
 """Header View."""
 
 from rich.text import Text
-from textual.containers import Container
+from textual.containers import Container, Horizontal, Vertical
 from textual.widgets import (
+    Label,
+    Markdown,
     Static,
 )
+
+from tui.domain.controllers.organization import get_organization_data
 
 GOOGLE_BANNER_TEXT = [
     ("G", "#4285F4"),  # G - Blue
@@ -33,7 +37,18 @@ GOOGLE_BANNER_TEXT = [
 
 def get_google_header_view() -> Container:
     """Builds the Google header view."""
+    ORGANIZATION = get_organization_data()
     return Container(
-        Static(Text.assemble(*GOOGLE_BANNER_TEXT), id="google-header"),
+        Vertical(
+            Static(Text.assemble(*GOOGLE_BANNER_TEXT), id="google-header"),
+            Horizontal(
+                Label("Name:", classes="text-primary header-label"),
+                Label(f"{ORGANIZATION.display_name}", classes="foreground"),
+            ),
+            Horizontal(
+                Label("ID:", classes="text-primary header-label"),
+                Label(f"{ORGANIZATION.name}", classes="foreground"),
+            ),
+        ),
         id="header-container",
     )
