@@ -4,7 +4,7 @@ import logging
 import os
 
 from tui.domain.models.errors import EnvironmentVariableError
-from tui.services.project import get_projects_for_folder
+from tui.domain.services.project import get_projects_for_folder
 
 GCP_ORGANIZATION = os.environ.get("GCP_ORGANIZATION")
 
