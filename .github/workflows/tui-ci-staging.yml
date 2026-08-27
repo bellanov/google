@@ -5,7 +5,7 @@ name: "🧪 CI: Staging"
 
 on:
   pull_request:
-    branches: ["main"]
+    branches: ["staging"]
     paths:
       - "tui/**"
 
@@ -13,11 +13,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     environment: staging
-
-    strategy:
-      fail-fast: false
-      matrix:
-        python-version: ["3.14"]
 
     steps:
       - uses: actions/checkout@v7

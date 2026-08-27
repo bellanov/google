@@ -24,6 +24,3 @@ def get_organization_markdown() -> str:
 | {ORGANIZATION.name} | {ORGANIZATION.display_name} |
 """
     return MARKDOWN
-
-
-ORGANIZATION_MARKDOWN = get_organization_markdown()

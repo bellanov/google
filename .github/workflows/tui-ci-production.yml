@@ -5,7 +5,7 @@ name: "🧪 CI: Production"
 
 on:
   pull_request:
-    branches: ["main"]
+    branches: ["production"]
     paths:
       - "tui/**"
 
@@ -13,11 +13,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     environment: production
-
-    strategy:
-      fail-fast: false
-      matrix:
-        python-version: ["3.14"]
 
     steps:
       - uses: actions/checkout@v7
