@@ -1,4 +1,4 @@
-"""Terminal User Interface (TUI)."""
+"""Header View."""
 
 from rich.text import Text
 from textual.containers import Container
@@ -32,6 +32,7 @@ GOOGLE_BANNER_TEXT = [
 
 
 def get_google_header_view() -> Container:
+    """Builds the Google header view."""
     return Container(
         Static(Text.assemble(*GOOGLE_BANNER_TEXT), id="google-header"),
         id="header-container",
