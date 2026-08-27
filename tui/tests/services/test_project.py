@@ -4,7 +4,7 @@ import os
 
 import pytest
 
-from tui.services.project import get_projects_for_folder
+from tui.domain.services.project import get_projects_for_folder
 
 
 @pytest.mark.integration

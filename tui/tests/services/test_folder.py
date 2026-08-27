@@ -4,7 +4,7 @@ import os
 
 import pytest
 
-from tui.services.folder import get_folders_for_organization
+from tui.domain.services.folder import get_folders_for_organization
 
 GCP_FOLDER_ID = os.getenv("GCP_FOLDER_ID")
 GCP_FOLDER_NAME = os.getenv("GCP_FOLDER_NAME")

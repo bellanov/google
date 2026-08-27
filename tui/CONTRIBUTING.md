@@ -13,9 +13,9 @@ First, a local project environment needs to be created, then the project's modul
    cd gcp/cli
    ```
 
-2. Create a virtual environment. 
+2. Create a virtual environment.
 
-    **Virtual Environments** enable you isolate installations of *Python*, so you are able to test your changes against multiple Python versions. They also help you avoid polluting the default Python installation.
+   **Virtual Environments** enable you isolate installations of _Python_, so you are able to test your changes against multiple Python versions. They also help you avoid polluting the default Python installation.
 
    ```sh
    # Create Virtual Environment
@@ -51,7 +51,7 @@ First, a local project environment needs to be created, then the project's modul
    git push
 
    # Create a pull request using the provided link after pushing
-   remote: 
+   remote:
    remote: Create a pull request for 'my-new-feature' on GitHub by visiting:
    remote:      https://github.com/bellanov/google/pull/new/my-new-feature
 
