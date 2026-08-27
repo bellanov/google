@@ -23,6 +23,3 @@ def get_projects_markdown() -> str:
     for project in PROJECTS:
         MARKDOWN += f"| {project.project_id} | {project.name} |\n"
     return MARKDOWN
-
-
-PROJECTS_MARKDOWN = get_projects_markdown()
