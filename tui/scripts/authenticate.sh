@@ -3,4 +3,4 @@
 # Generate default application credentials.
 
 echo "Logging in to Google Cloud..."
-gcloud auth login
+gcloud auth application-default login

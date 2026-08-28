@@ -25,7 +25,6 @@ def get_organization(organization_id: str) -> Organization:
 
     # Handle the response
     return Organization(
-        id=response.name,
         name=response.name,
         display_name=response.display_name,
     )
