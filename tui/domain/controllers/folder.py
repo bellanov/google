@@ -1,6 +1,7 @@
 """Folder View."""
 
 import os
+from typing import Generator
 
 from google.cloud import resourcemanager_v3
 from tui.domain.models.errors import EnvironmentVariableError
