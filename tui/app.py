@@ -9,7 +9,7 @@ from textual.widgets import (
 )
 
 from tui.domain.views.folders import get_folders_view
-from tui.domain.views.header import get_google_header_view
+from tui.domain.views.header import get_organization_view
 from tui.domain.views.projects import get_projects_view
 
 COMPONENTS = {
@@ -18,7 +18,7 @@ COMPONENTS = {
         "Projects": get_projects_view(),
     },
     "Header": {
-        "Google": get_google_header_view(),
+        "Google": get_organization_view(),
     },
 }
 

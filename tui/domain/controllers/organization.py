@@ -4,21 +4,10 @@ import os
 
 from google.cloud import resourcemanager_v3
 
-from tui.domain.models.errors import EnvironmentVariableError
 from tui.domain.models.organization import Organization
-from tui.domain.services.organization import get_organization
-
-GCP_ORGANIZATION = os.environ.get("GCP_ORGANIZATION")
-
-if not GCP_ORGANIZATION:
-    raise EnvironmentVariableError("GCP_ORGANIZATION environment variable is not set.")
 
 
-def get_organization_data() -> Organization:
-    return get_organization(GCP_ORGANIZATION)
-
-
-def get_organization_v2(organization_id: str) -> Organization:
+def get_organization_data(organization_id: str) -> Organization:
     """Get an organization by ID.
     Args:
         organization_id: The ID of the organization.
