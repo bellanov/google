@@ -3,7 +3,6 @@
 import os
 
 from google.cloud import resourcemanager_v3
-
 from tui.domain.models.errors import EnvironmentVariableError
 from tui.domain.models.folder import Folder
 
@@ -24,6 +23,7 @@ def get_folders_markdown() -> str:
 ```json
 {FOLDERS}
 ```"""
+
 
 def get_folders_for_organization(organization_id: str) -> Generator[Folder, None, None]:
     """Get all folders for an organization.

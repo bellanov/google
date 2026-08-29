@@ -5,7 +5,6 @@ import os
 
 from google.cloud import resourcemanager_v3
 from google.cloud.resourcemanager_v3.types import Project
-
 from tui.domain.models.errors import EnvironmentVariableError
 
 GCP_ORGANIZATION = os.environ.get("GCP_ORGANIZATION")

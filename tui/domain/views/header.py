@@ -3,14 +3,14 @@
 import os
 
 from rich.text import Text
-from textual.containers import Container, Vertical, Horizontal
+from textual.containers import Container, Horizontal, Vertical
 from textual.widgets import (
     Label,
     Static,
 )
+
 from tui.domain.controllers.organization import get_organization_data
 from tui.domain.models.errors import EnvironmentVariableError
-
 
 GCP_ORGANIZATION = os.environ.get("GCP_ORGANIZATION")
 
@@ -47,14 +47,15 @@ def get_organization_view() -> Container:
     ORGANIZATION = get_organization_data(GCP_ORGANIZATION)
     return Container(
         Vertical(
-        Static(Text.assemble(*GOOGLE_BANNER_TEXT), id="google-header"),
-        Horizontal(
-            Label("Name:", classes="text-primary header-label"),
-            Label(f"{ORGANIZATION.display_name}", classes="foreground")
+            Static(Text.assemble(*GOOGLE_BANNER_TEXT), id="google-header"),
+            Horizontal(
+                Label("Name:", classes="text-primary header-label"),
+                Label(f"{ORGANIZATION.display_name}", classes="foreground"),
+            ),
+            Horizontal(
+                Label("ID:", classes="text-primary header-label"),
+                Label(f"{ORGANIZATION.name}", classes="foreground"),
+            ),
         ),
-        Horizontal(
-            Label("ID:", classes="text-primary header-label"),
-            Label(f"{ORGANIZATION.name}", classes="foreground")
-        )),
         id="header-container",
     )
