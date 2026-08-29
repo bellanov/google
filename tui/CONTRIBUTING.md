@@ -1,4 +1,4 @@
-# Contributing to `cli`
+# Contributing to `tui`
 
 Thank you for your interest!
 
@@ -9,8 +9,8 @@ First, a local project environment needs to be created, then the project's modul
 1. Clone the repository.
 
    ```sh
-   git clone https://github.com/bellanov/gcp.git
-   cd gcp/cli
+   git clone https://github.com/bellanov/google.git
+   cd google/tui
    ```
 
 2. Create a virtual environment.

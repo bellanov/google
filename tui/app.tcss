@@ -53,6 +53,10 @@ Footer {
     color: $panel;
 }
 
+.boost {
+    color: $boost;
+}
+
 #header-container {
     dock: top;
     width: 100%;
