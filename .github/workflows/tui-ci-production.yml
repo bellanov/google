@@ -8,6 +8,7 @@ on:
     branches: ["production"]
     paths:
       - "tui/**"
+      - ".github/workflows/tui-ci-production.yml"
 
 jobs:
   build:
