@@ -2,4 +2,4 @@
 #
 # View the predefined Border sets.
 
-textual borders
+uv run textual borders

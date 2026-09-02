@@ -8,9 +8,9 @@ from textual.widgets import (
     TabPane,
 )
 
-from tui.domain.views.folders import get_folders_view
-from tui.domain.views.header import get_organization_view
-from tui.domain.views.projects import get_projects_view
+from tui.views.folders import get_folders_view
+from tui.views.header import get_organization_view
+from tui.views.projects import get_projects_view
 
 COMPONENTS = {
     "Tabs": {
