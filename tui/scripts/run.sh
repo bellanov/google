@@ -2,4 +2,4 @@
 #
 # Run the application.
 
-textual run --dev tui/app.py
+uv run textual run --dev tui/app.py

@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Install development dependencies.
+# Install Dependencies.
 
-echo "Installing development dependencies..."
-pip install -e ".[dev]"
+echo "Installing Dependencies..."
+uv sync --all-extras

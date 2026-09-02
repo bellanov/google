@@ -2,4 +2,4 @@
 #
 # View the predefined Color sets.
 
-textual colors
+uv run textual colors

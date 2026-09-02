@@ -23,11 +23,10 @@ case "$TEST_TYPE" in
 esac
 
 echo "Executing Tests..."
-coverage run -m pytest -m "$markers" tui/tests/
-
+uv run coverage run -m pytest -m "$markers" tui/tests/
 
 echo "Generating Report..."
-coverage report -m
+uv run coverage report -m
 
 echo "Build HTML Report..."
-coverage html
+uv run coverage html

@@ -16,7 +16,14 @@ if not GCP_ORGANIZATION_JSON:
 
 
 def get_folders_markdown() -> str:
+    """Get the folders for the organization in markdown format.
 
+    This function is a placeholder and should be implemented to
+    fetch the folders from the GCP organization.
+
+    Returns:
+        A string containing the folders in markdown format.
+    """
     with open(GCP_ORGANIZATION_JSON, "r") as f:
         FOLDERS = f.read()
 
@@ -28,6 +35,7 @@ def get_folders_markdown() -> str:
 
 def get_folders_for_organization(organization_id: str) -> Generator[Folder, None, None]:
     """Get all folders for an organization.
+
     Args:
         organization_id: The ID of the organization.
 
