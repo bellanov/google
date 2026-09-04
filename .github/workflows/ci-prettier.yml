@@ -31,4 +31,3 @@ jobs:
       - name: Validate Prettier formatting
         run: |
           prettier --check .
-
