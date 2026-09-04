@@ -12,24 +12,25 @@ on:
       - "**.yaml"
 
 jobs:
-  build:
+
+  prettier:
     runs-on: ubuntu-latest
     environment: development
 
     steps:
-      - uses: actions/checkout@v7
+      - name: Checkout repository
+        uses: actions/checkout@v7
 
-      - name: Install uv
-        uses: astral-sh/setup-uv@v10.0.1
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: "26"
 
-      - name: Install Dependencies
+      - name: Install Spectral CLI
+        run: npm install -g prettier
+
+      - name: Validate Prettier formatting
         run: |
-          tui/scripts/install.sh
-
-      - name: Lint with flake8, black, isort
-        run: |
-          tui/scripts/lint.sh
-
-      - name: Test with pytest
-        run: |
-          tui/scripts/test.sh
+          prettier --check "**/*.md"
+          prettier --check "**/*.yml"
+          prettier --check "**/*.yaml"
