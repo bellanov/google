@@ -30,6 +30,5 @@ jobs:
 
       - name: Validate Prettier formatting
         run: |
-          prettier --check "**/*.md"
-          prettier --check "**/*.yml"
-          prettier --check "**/*.yaml"
+          prettier --check .
+
