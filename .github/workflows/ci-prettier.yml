@@ -12,7 +12,6 @@ on:
       - "**.yaml"
 
 jobs:
-
   lint:
     runs-on: ubuntu-latest
     environment: development
