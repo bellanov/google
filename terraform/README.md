@@ -21,7 +21,7 @@ Summary of the steps to establish WIF for Terraform.
 
 _Prerequisites:_
 
-- The `GCP_PROJECT` environment variable must be set to the Google Cloud project ID.
+- The `GCP_PROJECT` environment variable must be set to the Google Cloud *Project ID*.
 - The `SERVICE_ACCOUNT` environment variable must be set to the desired name of the _Service Account_.
 - The `SERVICE_ACCOUNT_EMAIL` environment variable must be set to the email of the _Service Account_.
 - The `WORKLOAD_IDENTITY_PROVIDER` environment variable must be set to the desired name of the _Workload Identity Provider_.
