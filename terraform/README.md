@@ -22,35 +22,41 @@ Summary of the steps to establish WIF for Terraform.
 *Prerequisites:*
 
 - The `GCP_PROJECT` environment variable must be set to the Google Cloud project ID.
+- The `SERVICE_ACCOUNT` environment variable must be set to the desired name of the *Service Account*.
+- The `SERVICE_ACCOUNT_EMAIL` environment variable must be set to the email of the *Service Account*.
+- The `WORKLOAD_IDENTITY_PROVIDER` environment variable must be set to the desired name of the *Workload Identity Provider*.
+- The `WORKLOAD_IDENTITY_POOL` environment variable must be set to the desired name of the *Workload Identity Pool*.
+- The `WIF_PRINCIPAL` environment variable must be set to the desired principal for the *Workload Identity Provider*.
+- The `REPO_PRINCIPAL` environment variable must be set to the desired principal for the *GitHub Repository*.
 
 1. Create a **Service Account** in the Google Cloud project.
 
 ```sh
-terraform/scripts/project/create_service_account.sh
+terraform/scripts/wif/create_service_account.sh
 ```
 
 2. Create a **Workload Identity Pool** in the Google Cloud project.
 
 ```sh
-terraform/scripts/project/create_workload_identity_pool.sh
+terraform/scripts/wif/create_workload_identity_pool.sh
 ```
 
 3. Create a **Workload Identity Provider** in the Google Cloud project.
 
 ```sh
-terraform/scripts/project/create_workload_identity_provider.sh
+terraform/scripts/wif/create_workload_identity_provider.sh
 ```
 
 4. Grant the **Service Account** the necessary **roles** to access resources.
 
 ```sh
-terraform/scripts/project/grant_service_account_roles.sh
+terraform/scripts/wif/grant_service_account_roles.sh
 ```
 
 5. Configure Terraform to use the **Workload Identity Federation (WIF)** for authentication.
 
 ```sh
-terraform/scripts/project/configure_terraform_wif.sh
+terraform/scripts/wif/configure_terraform_wif.sh
 ```
 
 
