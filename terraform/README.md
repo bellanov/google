@@ -19,15 +19,15 @@ Various _Scripts_ are available to support the deployment of infrastructure.
 
 Summary of the steps to establish WIF for Terraform.
 
-*Prerequisites:*
+_Prerequisites:_
 
 - The `GCP_PROJECT` environment variable must be set to the Google Cloud project ID.
-- The `SERVICE_ACCOUNT` environment variable must be set to the desired name of the *Service Account*.
-- The `SERVICE_ACCOUNT_EMAIL` environment variable must be set to the email of the *Service Account*.
-- The `WORKLOAD_IDENTITY_PROVIDER` environment variable must be set to the desired name of the *Workload Identity Provider*.
-- The `WORKLOAD_IDENTITY_POOL` environment variable must be set to the desired name of the *Workload Identity Pool*.
-- The `WIF_PRINCIPAL` environment variable must be set to the desired principal for the *Workload Identity Provider*.
-- The `REPO_PRINCIPAL` environment variable must be set to the desired principal for the *GitHub Repository*.
+- The `SERVICE_ACCOUNT` environment variable must be set to the desired name of the _Service Account_.
+- The `SERVICE_ACCOUNT_EMAIL` environment variable must be set to the email of the _Service Account_.
+- The `WORKLOAD_IDENTITY_PROVIDER` environment variable must be set to the desired name of the _Workload Identity Provider_.
+- The `WORKLOAD_IDENTITY_POOL` environment variable must be set to the desired name of the _Workload Identity Pool_.
+- The `WIF_PRINCIPAL` environment variable must be set to the desired principal for the _Workload Identity Provider_.
+- The `REPO_PRINCIPAL` environment variable must be set to the desired principal for the _GitHub Repository_.
 
 1. Create a **Service Account** in the Google Cloud project.
 
@@ -58,5 +58,3 @@ terraform/scripts/wif/grant_service_account_roles.sh
 ```sh
 terraform/scripts/wif/configure_terraform_wif.sh
 ```
-
-
