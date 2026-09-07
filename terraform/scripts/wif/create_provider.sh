@@ -2,9 +2,9 @@
 #
 # Create GitHub Providers.
 
-IDENTITY_POOL="${1}"
-
 gcloud config set project $GCP_PROJECT
+
+echo "Attach the GitHub Repository { ${GITHUB_REPO} } to providers."
 
 gcloud iam workload-identity-pools providers create-oidc "${GITHUB_REPO}" \
   --location="global" \
