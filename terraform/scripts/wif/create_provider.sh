@@ -16,7 +16,7 @@ gcloud iam workload-identity-pools providers create-oidc "${GITHUB_REPO}" \
 
 sleep 3
 
-gcloud iam workload-identity-pools providers describe "google" \
+gcloud iam workload-identity-pools providers describe "${GITHUB_REPO}" \
   --location="global" \
   --workload-identity-pool="${WORKLOAD_IDENTITY_POOL}" \
   --format="value(name)"

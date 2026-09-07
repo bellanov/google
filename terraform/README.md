@@ -54,6 +54,15 @@ It is recommended that an environment file be established with the following var
     terraform/scripts/wif/create_provider.sh
     ```
 
+    Use this value as the workload_identity_provider value in the GitHub Actions YAML:
+
+    ```yaml
+    - uses: 'google-github-actions/auth@v3'
+    with:
+        project_id: 'my-project'
+        workload_identity_provider: '...' # "projects/${PROJECT_NUMBER}/locations/global/workloadIdentityPools/github/providers/my-repo"
+    ```
+
 4. Grant the **Service Account** the necessary **roles** to access resources.
 
     ```sh
