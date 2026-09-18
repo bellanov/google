@@ -13,19 +13,25 @@ resource "google_service_account" "service_account" {
   display_name = each.value.description
 }
 
-# TODO: Add a policy to restrict the maximum age of service account keys to enhance security.
-# resource "google_org_policy_policy" "allowed_sa_key_age" {
-#   name   = "organizations/YOUR_ORG_ID/policies/iam.allowedServiceAccountKeyAge"
-#   parent = "organizations/YOUR_ORG_ID"
+resource "google_tags_tag_key" "env_tag_key" {
+  parent     = "projects/${var.project_id}"
+  short_name = "env1"
+}
 
-#   spec {
-#     rules {
-#       values {
-#         allowed_values = ["in:30d"] # Set your desired max key age limit (e.g., 30 days)
-#       }
-#     }
-#   }
-# }
+resource "google_tags_tag_key" "department_tag_key" {
+  parent     = "projects/${var.project_id}"
+  short_name = "department1"
+}
+
+resource "google_tags_tag_value" "env_tag_value" {
+  parent     = "tagKeys/${google_tags_tag_key.env_tag_key.name}"
+  short_name = "prod"
+}
+
+resource "google_tags_tag_value" "department_tag_value" {
+  parent     = "tagKeys/${google_tags_tag_key.department_tag_key.name}"
+  short_name = "sales"
+}
 
 locals {
   services = []
