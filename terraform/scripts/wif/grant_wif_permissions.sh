@@ -23,3 +23,8 @@ gcloud projects add-iam-policy-binding $GCP_PROJECT \
 gcloud projects add-iam-policy-binding $GCP_PROJECT \
   --member="${WIF_PRINCIPAL}" \
   --role="roles/iam.serviceAccountAdmin"
+
+# Grant permissions for tags management
+gcloud projects add-iam-policy-binding $GCP_PROJECT \
+  --member="${WIF_PRINCIPAL}" \
+  --role="roles/resourcemanager.tagAdmin"
