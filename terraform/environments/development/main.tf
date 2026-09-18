@@ -13,24 +13,14 @@ resource "google_service_account" "service_account" {
   display_name = each.value.description
 }
 
-resource "google_tags_tag_key" "env_tag_key" {
+resource "google_tags_tag_key" "tag_key" {
   parent     = "projects/${var.project_id}"
-  short_name = "env1"
-}
-
-resource "google_tags_tag_key" "department_tag_key" {
-  parent     = "projects/${var.project_id}"
-  short_name = "department1"
+  short_name = "environment"
 }
 
 resource "google_tags_tag_value" "env_tag_value" {
-  parent     = "tagKeys/${google_tags_tag_key.env_tag_key.name}"
-  short_name = "prod"
-}
-
-resource "google_tags_tag_value" "department_tag_value" {
-  parent     = "tagKeys/${google_tags_tag_key.department_tag_key.name}"
-  short_name = "sales"
+  parent     = "tagKeys/${google_tags_tag_key.tag_key.name}"
+  short_name = "development"
 }
 
 locals {
@@ -59,4 +49,5 @@ locals {
       roles       = []
     }
   }
+
 }
