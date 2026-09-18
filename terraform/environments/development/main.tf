@@ -18,7 +18,7 @@ resource "google_tags_tag_key" "tag_key" {
   short_name = "environment"
 }
 
-resource "google_tags_tag_value" "env_tag_value" {
+resource "google_tags_tag_value" "tag_value" {
   parent     = "tagKeys/${google_tags_tag_key.tag_key.name}"
   short_name = "development"
 }

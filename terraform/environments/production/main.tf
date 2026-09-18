@@ -13,6 +13,16 @@ resource "google_service_account" "service_account" {
   display_name = each.value.description
 }
 
+resource "google_tags_tag_key" "tag_key" {
+  parent     = "projects/${var.project_id}"
+  short_name = "environment"
+}
+
+resource "google_tags_tag_value" "tag_value" {
+  parent     = "tagKeys/${google_tags_tag_key.tag_key.name}"
+  short_name = "production"
+}
+
 locals {
   services = []
 
