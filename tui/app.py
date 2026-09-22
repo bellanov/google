@@ -24,7 +24,6 @@ COMPONENTS = {
 
 
 class TUIApp(App):
-
     CSS_PATH = "app.tcss"
 
     BINDINGS = [

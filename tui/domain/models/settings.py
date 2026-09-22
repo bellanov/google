@@ -7,13 +7,16 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 ENVIRONMENT = os.environ.get("ENVIRONMENT")
 
+
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(
-        env_file=Path(Path(__file__).resolve().parents[1] / "environments" / f".env.{ENVIRONMENT}"),
+        env_file=Path(
+            Path(__file__).resolve().parents[1] / "environments" / f".env.{ENVIRONMENT}"
+        ),
         env_file_encoding="utf-8",
         case_sensitive=False,  # Default is False (case-insensitive mapping)
     )
-    
+
     environment: str
 
     # Project
@@ -30,9 +33,3 @@ class Settings(BaseSettings):
     service_account_email: str
     wif_principal: str
     repo_principal: str
-
-
-settings = Settings()
-
-print(f"Loaded settings from .env.{ENVIRONMENT} file.")
-print(f"GCP Project: {settings.gcp_project}")
