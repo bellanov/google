@@ -2,7 +2,7 @@
 
 from pydantic import Field
 
-from tui.domain.models.pydantic import CamelCaseModel
+from tui.domain.models.camel_case import CamelCaseModel
 
 GCP_FOLDER_NAME = r"^(folders|organizations)/[0-9]+$"
 GCP_FOLDER_DISPLAY_NAME = r"^[a-zA-Z0-9][a-zA-Z0-9 _-]{1,28}[a-zA-Z0-9]$"
