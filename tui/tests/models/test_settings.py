@@ -9,7 +9,7 @@ from tui.domain.models.settings import Settings
 ENVIRONMENT = os.environ.get("ENVIRONMENT")
 
 
-@pytest.mark.unit
+@pytest.mark.integration
 class TestSettings:
     """Tests for Settings model."""
 
