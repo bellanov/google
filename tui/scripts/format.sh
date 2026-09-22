@@ -3,7 +3,7 @@
 # Format Code Base.
 
 echo "Formatting imports..."
-isort tui
+uv run isort tui
 
 echo "Formatting code base..."
-black --target-version py314 tui 
+uv run black --target-version py314 tui 
