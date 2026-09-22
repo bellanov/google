@@ -3,6 +3,7 @@
 import os
 
 import pytest
+
 from tui.domain.models.settings import Settings
 
 ENVIRONMENT = os.environ.get("ENVIRONMENT")
