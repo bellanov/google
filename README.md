@@ -35,10 +35,10 @@ In this setup, the Workload Identity Pool has direct IAM permissions on Google C
 
 ![Direct Workload Identity Federation](https://raw.githubusercontent.com/google-github-actions/auth/refs/heads/main/docs/google-github-actions-auth-direct-workload-identity-federation.svg)
 
-| Workflow                 | Description                                                           |
-| ------------------------ | --------------------------------------------------------------------- |
-| _cli-ci-\<environment\>_ | Continuous Integration workflow for testing and validating the `cli`. |
-| _cd-\<environment\>_     | Continuous Deployment workflow for _Terraform_ deployments.           |
+| Workflow                 | Description                                                                                     |
+| ------------------------ | ----------------------------------------------------------------------------------------------- |
+| _tui-ci-\<environment\>_ | Continuous Integration workflow for testing and validating the _Terminal User Interface (TUI)_. |
+| _cd-\<environment\>_     | Continuous Deployment workflow for _Terraform_ deployments.                                     |
 
 ## Architecture
 
