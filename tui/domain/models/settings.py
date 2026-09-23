@@ -5,14 +5,17 @@ from pathlib import Path
 
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
-ENVIRONMENT = os.environ.get("ENVIRONMENT")
+from tui.domain.models.errors import EnvironmentFileError
+
+ENV_FILE = os.environ.get("ENV_FILE")
+
+if not ENV_FILE:
+    raise EnvironmentFileError("ENV_FILE environment variable is not set.")
 
 
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(
-        env_file=Path(
-            Path(__file__).resolve().parents[1] / "environments" / f".env.{ENVIRONMENT}"
-        ),
+        env_file=Path(ENV_FILE),
         env_file_encoding="utf-8",
         case_sensitive=False,  # Default is False (case-insensitive mapping)
     )

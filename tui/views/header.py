@@ -10,12 +10,12 @@ from textual.widgets import (
 )
 
 from tui.domain.controllers.organization import get_organization_data
-from tui.domain.models.errors import EnvironmentVariableError
+from tui.domain.models.errors import EnvironmentFileError
 
 GCP_ORGANIZATION = os.environ.get("GCP_ORGANIZATION")
 
 if not GCP_ORGANIZATION:
-    raise EnvironmentVariableError("GCP_ORGANIZATION environment variable is not set.")
+    raise EnvironmentFileError("GCP_ORGANIZATION environment variable is not set.")
 
 GOOGLE_BANNER_TEXT = [
     ("G", "#4285F4"),  # G - Blue
