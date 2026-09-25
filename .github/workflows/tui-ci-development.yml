@@ -37,5 +37,7 @@ jobs:
           tui/scripts/lint.sh
 
       - name: Test with pytest
+        env:
+          ENV_FILE: "${GITHUB_WORKSPACE}/.env"
         run: |
           tui/scripts/test.sh
