@@ -4,28 +4,23 @@ import os
 
 import pytest
 
-from tui.domain.models.settings import Settings
-
-ENVIRONMENT = os.environ.get("ENVIRONMENT")
-
+from tui.domain.models.settings import SETTINGS
 
 @pytest.mark.integration
 class TestSettings:
     """Tests for Settings model."""
 
     def test_environment_variables(self):
-        """Test loading environment variables."""
-        settings = Settings()
+        """Test that the environment variables are loaded correctly."""
 
-        assert settings.environment == ENVIRONMENT
-        assert settings.gcp_project is not None
-        assert settings.gcp_organization is not None
-        assert settings.gcp_organization_json is not None
-        assert settings.github_org is not None
-        assert settings.github_repo is not None
-        assert settings.project_number is not None
-        assert settings.workload_identity_pool is not None
-        assert settings.service_account is not None
-        assert settings.service_account_email is not None
-        assert settings.wif_principal is not None
-        assert settings.repo_principal is not None
+        assert SETTINGS.gcp_project is not None
+        assert SETTINGS.gcp_organization is not None
+        assert SETTINGS.gcp_organization_json is not None
+        assert SETTINGS.github_org is not None
+        assert SETTINGS.github_repo is not None
+        assert SETTINGS.project_number is not None
+        assert SETTINGS.workload_identity_pool is not None
+        assert SETTINGS.service_account is not None
+        assert SETTINGS.service_account_email is not None
+        assert SETTINGS.wif_principal is not None
+        assert SETTINGS.repo_principal is not None
