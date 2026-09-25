@@ -7,10 +7,14 @@ class TUIError(Exception):
     pass
 
 
-class EnvironmentVariableError(TUIError):
-    """Raised when required environment variable is missing."""
+class EnvironmentFileError(TUIError):
+    """Raised when the required environment file is missing."""
 
     pass
+
+
+# Backward compatibility alias for older imports.
+EnvironmentVariableError = EnvironmentFileError
 
 
 class OrganizationNotFoundError(TUIError):

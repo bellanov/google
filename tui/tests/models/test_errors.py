@@ -3,7 +3,7 @@
 import pytest
 
 from tui.domain.models.errors import (
-    EnvironmentVariableError,
+    EnvironmentFileError,
     OrganizationNotFoundError,
     TUIError,
     ValidationError,
@@ -36,34 +36,34 @@ class TestTUIError:
 
 
 @pytest.mark.unit
-class TestEnvironmentVariableError:
-    """Tests for EnvironmentVariableError."""
+class TestEnvironmentFileError:
+    """Tests for EnvironmentFileError."""
 
-    def test_environment_variable_error_creation(self):
-        """Test creating an EnvironmentVariableError."""
-        error = EnvironmentVariableError("GCP_ORGANIZATION not set")
+    def test_environment_file_error_creation(self):
+        """Test creating an EnvironmentFileError."""
+        error = EnvironmentFileError("GCP_ORGANIZATION not set")
         assert str(error) == "GCP_ORGANIZATION not set"
 
-    def test_environment_variable_error_is_tui_error(self):
-        """Test that EnvironmentVariableError inherits from TUIError."""
-        error = EnvironmentVariableError("Test")
+    def test_environment_file_error_is_tui_error(self):
+        """Test that EnvironmentFileError inherits from TUIError."""
+        error = EnvironmentFileError("Test")
         assert isinstance(error, TUIError)
         assert isinstance(error, Exception)
 
-    def test_environment_variable_error_can_be_raised(self):
-        """Test raising an EnvironmentVariableError."""
-        with pytest.raises(EnvironmentVariableError):
-            raise EnvironmentVariableError("GCP_ORGANIZATION not set")
+    def test_environment_file_error_can_be_raised(self):
+        """Test raising an EnvironmentFileError."""
+        with pytest.raises(EnvironmentFileError):
+            raise EnvironmentFileError("GCP_ORGANIZATION not set")
 
-    def test_environment_variable_error_caught_by_tui_error(self):
-        """Test that EnvironmentVariableError can be caught as TUIError."""
+    def test_environment_file_error_caught_by_tui_error(self):
+        """Test that EnvironmentFileError can be caught as TUIError."""
         with pytest.raises(TUIError):
-            raise EnvironmentVariableError("Test")
+            raise EnvironmentFileError("Test")
 
-    def test_environment_variable_error_with_variable_name(self):
-        """Test EnvironmentVariableError with variable name in message."""
+    def test_environment_file_error_with_variable_name(self):
+        """Test EnvironmentFileError with variable name in message."""
         var_name = "MY_VAR"
-        error = EnvironmentVariableError(f"Environment variable {var_name} is required")
+        error = EnvironmentFileError(f"Environment variable {var_name} is required")
         assert var_name in str(error)
 
 
@@ -138,7 +138,7 @@ class TestErrorHierarchy:
     def test_all_errors_inherit_from_tui_error(self):
         """Test that all custom errors inherit from TUIError."""
         errors = [
-            EnvironmentVariableError("Test"),
+            EnvironmentFileError("Test"),
             OrganizationNotFoundError("Test"),
             ValidationError("Test"),
         ]
@@ -148,7 +148,7 @@ class TestErrorHierarchy:
     def test_catch_all_errors_with_tui_error(self):
         """Test that all custom errors can be caught as TUIError."""
         errors_to_raise = [
-            EnvironmentVariableError("Env var missing"),
+            EnvironmentFileError("Env var missing"),
             OrganizationNotFoundError("Org not found"),
             ValidationError("Invalid data"),
         ]
@@ -159,8 +159,8 @@ class TestErrorHierarchy:
 
     def test_specific_error_types_can_be_differentiated(self):
         """Test that specific error types can be identified."""
-        with pytest.raises(EnvironmentVariableError):
-            raise EnvironmentVariableError("Test")
+        with pytest.raises(EnvironmentFileError):
+            raise EnvironmentFileError("Test")
 
         with pytest.raises(OrganizationNotFoundError):
             raise OrganizationNotFoundError("Test")
@@ -171,7 +171,7 @@ class TestErrorHierarchy:
     def test_multiple_errors_in_sequence(self):
         """Test handling multiple different errors in sequence."""
         error_sequence = [
-            (EnvironmentVariableError, "Env error"),
+            (EnvironmentFileError, "Env error"),
             (OrganizationNotFoundError, "Org error"),
             (ValidationError, "Validation error"),
         ]

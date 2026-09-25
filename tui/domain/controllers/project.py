@@ -5,12 +5,12 @@ import os
 
 from google.cloud import resourcemanager_v3
 from google.cloud.resourcemanager_v3.types import Project
-from tui.domain.models.errors import EnvironmentVariableError
+from tui.domain.models.errors import EnvironmentFileError
 
 GCP_ORGANIZATION = os.environ.get("GCP_ORGANIZATION")
 
 if not GCP_ORGANIZATION:
-    raise EnvironmentVariableError("GCP_ORGANIZATION environment variable is not set.")
+    raise EnvironmentFileError("GCP_ORGANIZATION environment variable is not set.")
 
 
 def get_projects_markdown() -> str:
