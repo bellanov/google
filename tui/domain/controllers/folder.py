@@ -1,16 +1,12 @@
-"""Folder View."""
+"""Folder Controller."""
 
-import os
 from typing import Generator
 
 from google.cloud import resourcemanager_v3
-from tui.domain.models.errors import EnvironmentFileError
 from tui.domain.models.folder import Folder
+from tui.domain.models.settings import SETTINGS
 
-GCP_ORGANIZATION_JSON = os.environ.get("GCP_ORGANIZATION_JSON")
-
-if not GCP_ORGANIZATION_JSON:
-    raise EnvironmentFileError("GCP_ORGANIZATION_JSON environment variable is not set.")
+GCP_ORGANIZATION_JSON = SETTINGS.gcp_organization_json
 
 
 def get_folders_markdown() -> str:

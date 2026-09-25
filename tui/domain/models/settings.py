@@ -1,24 +1,11 @@
 """Settings Model."""
 
-import os
-from pathlib import Path
 
-from pydantic_settings import BaseSettings, SettingsConfigDict
-
-from tui.domain.models.errors import EnvironmentFileError
-
-ENV_FILE = os.environ.get("ENV_FILE")
-
-if not ENV_FILE:
-    raise EnvironmentFileError("ENV_FILE environment variable is not set.")
+from pydantic_settings import BaseSettings
 
 
 class Settings(BaseSettings):
-    model_config = SettingsConfigDict(
-        env_file=Path(ENV_FILE),
-        env_file_encoding="utf-8",
-        case_sensitive=False,  # Default is False (case-insensitive mapping)
-    )
+    """Import environment variables."""
 
     environment: str
 
@@ -36,3 +23,6 @@ class Settings(BaseSettings):
     service_account_email: str
     wif_principal: str
     repo_principal: str
+
+
+SETTINGS = Settings()

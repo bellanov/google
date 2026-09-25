@@ -1,7 +1,5 @@
 """Header View."""
 
-import os
-
 from rich.text import Text
 from textual.containers import Container, Horizontal, Vertical
 from textual.widgets import (
@@ -10,12 +8,9 @@ from textual.widgets import (
 )
 
 from tui.domain.controllers.organization import get_organization_data
-from tui.domain.models.errors import EnvironmentFileError
+from tui.domain.models.settings import SETTINGS
 
-GCP_ORGANIZATION = os.environ.get("GCP_ORGANIZATION")
-
-if not GCP_ORGANIZATION:
-    raise EnvironmentFileError("GCP_ORGANIZATION environment variable is not set.")
+GCP_ORGANIZATION = SETTINGS.gcp_organization
 
 GOOGLE_BANNER_TEXT = [
     ("G", "#4285F4"),  # G - Blue
