@@ -1,10 +1,9 @@
 """Tests for Settings model."""
 
-import os
-
 import pytest
 
 from tui.domain.models.settings import SETTINGS
+
 
 @pytest.mark.integration
 class TestSettings:

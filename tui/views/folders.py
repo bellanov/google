@@ -1,7 +1,5 @@
 """Folder View."""
 
-import os
-
 from textual.containers import Container
 from textual.widgets import (
     Markdown,
