@@ -1,16 +1,12 @@
-"""Project View."""
+"""Project Controller."""
 
 import logging
-import os
 
 from google.cloud import resourcemanager_v3
 from google.cloud.resourcemanager_v3.types import Project
-from tui.domain.models.errors import EnvironmentFileError
+from tui.domain.models.settings import SETTINGS
 
-GCP_ORGANIZATION = os.environ.get("GCP_ORGANIZATION")
-
-if not GCP_ORGANIZATION:
-    raise EnvironmentFileError("GCP_ORGANIZATION environment variable is not set.")
+GCP_ORGANIZATION = SETTINGS.gcp_organization
 
 
 def get_projects_markdown() -> str:

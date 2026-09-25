@@ -8,12 +8,6 @@ from textual.widgets import (
 )
 
 from tui.domain.controllers.folder import get_folders_markdown
-from tui.domain.models.errors import EnvironmentFileError
-
-GCP_ORGANIZATION = os.environ.get("GCP_ORGANIZATION")
-
-if not GCP_ORGANIZATION:
-    raise EnvironmentFileError("GCP_ORGANIZATION environment variable is not set.")
 
 
 def get_folders_view() -> Container:

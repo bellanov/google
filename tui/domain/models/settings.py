@@ -36,3 +36,6 @@ class Settings(BaseSettings):
     service_account_email: str
     wif_principal: str
     repo_principal: str
+
+
+SETTINGS = Settings()
