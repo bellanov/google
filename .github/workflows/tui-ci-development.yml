@@ -24,7 +24,7 @@ jobs:
       - name: Create .env file
         run: |
           echo "DEBUG=false" >> .env
-          ls -la .
+          echo "${{ secrets.ENV_FILE }}" >> .env
           cat .env
 
       - name: Install Dependencies
