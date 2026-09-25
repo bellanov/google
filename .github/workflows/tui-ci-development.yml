@@ -15,6 +15,9 @@ jobs:
     runs-on: ubuntu-latest
     environment: development
 
+    env:
+      ENV_FILE: "${GITHUB_WORKSPACE}/.env"
+
     steps:
       - uses: actions/checkout@v7
 
