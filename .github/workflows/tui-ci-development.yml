@@ -21,10 +21,6 @@ jobs:
       - name: Install uv
         uses: astral-sh/setup-uv@v10.0.1
 
-      - name: Create .env file
-        run: |
-          echo "${{ secrets.ENV_FILE }}" >> "${GITHUB_WORKSPACE}/.env"
-
       - name: Install Dependencies
         run: |
           tui/scripts/install.sh
@@ -34,8 +30,5 @@ jobs:
           tui/scripts/lint.sh
 
       - name: Test with pytest
-        env:
-          ENV_FILE: "${GITHUB_WORKSPACE}/.env"
         run: |
-          echo "${{ secrets.ENV_FILE }}" >> "${GITHUB_WORKSPACE}/.env"
           tui/scripts/test.sh
