@@ -15,6 +15,13 @@ jobs:
     runs-on: ubuntu-latest
     environment: development
 
+    env:
+      GCP_PROJECT: gcp-development-503118
+      GCP_ORGANIZATION: 105637539410
+      GCP_ORGANIZATION_JSON: ${{ github.workspace }}/google/tui/domain/organization.json
+      GITHUB_ORG: bellanov
+      GITHUB_REPO: google
+
     steps:
       - uses: actions/checkout@v7
 
