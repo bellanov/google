@@ -1,6 +1,5 @@
 """Settings Model."""
 
-
 from pydantic_settings import BaseSettings
 
 
