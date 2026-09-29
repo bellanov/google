@@ -1,6 +1,6 @@
 """Projects View."""
 
-from textual.containers import Container, Horizontal
+from textual.containers import Container
 from textual.widgets import (
     Markdown,
 )

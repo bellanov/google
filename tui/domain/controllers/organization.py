@@ -1,4 +1,4 @@
-"""Organization View."""
+"""Organization Controller."""
 
 from google.cloud import resourcemanager_v3
 from tui.domain.models.organization import Organization

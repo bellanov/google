@@ -16,17 +16,25 @@ jobs:
     environment: development
 
     env:
-      ENV_FILE: "${GITHUB_WORKSPACE}/.env"
+      ENVIRONMENT: ${{ vars.ENVIRONMENT }}
+      GCP_PROJECT: ${{ secrets.GCP_PROJECT }}
+      GCP_ORGANIZATION: 105637539410
+      GCP_ORGANIZATION_JSON: ${{ github.workspace }}/google/tui/domain/organization.json
+      GITHUB_ORG: ${{ github.repository_owner }}
+      GITHUB_REPO: ${{ github.event.repository.name }}
+      PROJECT_NUMBER: ${{ secrets.PROJECT_NUMBER}}
+      WORKLOAD_IDENTITY_POOL: ${{ secrets.WORKLOAD_IDENTITY_POOL }}
+      SERVICE_ACCOUNT: ${{ secrets.SERVICE_ACCOUNT }}
+      SERVICE_ACCOUNT_EMAIL: ${{ secrets.SERVICE_ACCOUNT_EMAIL }}
+      WIF_PRINCIPAL: ${{ secrets.WIF_PRINCIPAL }}
+      WIF_PROVIDER: ${{ secrets.WIF_PROVIDER }}
+      REPO_PRINCIPAL: ${{ secrets.REPO_PRINCIPAL }}
 
     steps:
       - uses: actions/checkout@v7
 
       - name: Install uv
         uses: astral-sh/setup-uv@v10.0.1
-
-      - name: Create .env file
-        run: |
-          echo "${{ secrets.ENV_FILE }}" >> .env
 
       - name: Install Dependencies
         run: |
