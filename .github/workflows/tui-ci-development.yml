@@ -16,18 +16,19 @@ jobs:
     environment: development
 
     env:
-      ENVIRONMENT: development
-      GCP_PROJECT: gcp-development-503118
+      ENVIRONMENT: ${{ vars.ENVIRONMENT }}
+      GCP_PROJECT: ${{ secrets.GCP_PROJECT }}
       GCP_ORGANIZATION: 105637539410
       GCP_ORGANIZATION_JSON: ${{ github.workspace }}/google/tui/domain/organization.json
-      GITHUB_ORG: bellanov
-      GITHUB_REPO: google
-      PROJECT_NUMBER: "59255497383"
-      WORKLOAD_IDENTITY_POOL: "github"
-      SERVICE_ACCOUNT: "github-actions"
-      SERVICE_ACCOUNT_EMAIL: "github-actions@gcp-development-503118.iam.gserviceaccount.com"
-      WIF_PRINCIPAL: "principalSet://iam.googleapis.com/projects/59255497383/locations/global/workloadIdentityPools/github/*"
-      REPO_PRINCIPAL: "principalSet://iam.googleapis.com/projects/59255497383/locations/global/workloadIdentityPools/github/attribute.repository/google"
+      GITHUB_ORG: ${{ github.repository_owner }}
+      GITHUB_REPO: ${{ github.event.repository.name }}
+      PROJECT_NUMBER: ${{ secrets.PROJECT_NUMBER}}
+      WORKLOAD_IDENTITY_POOL: ${{ secrets.WORKLOAD_IDENTITY_POOL }}
+      SERVICE_ACCOUNT: ${{ secrets.SERVICE_ACCOUNT }}
+      SERVICE_ACCOUNT_EMAIL: ${{ secrets.SERVICE_ACCOUNT_EMAIL }}
+      WIF_PRINCIPAL: ${{ secrets.WIF_PRINCIPAL }}
+      WIF_PROVIDER: ${{ secrets.WIF_PROVIDER }}
+      REPO_PRINCIPAL: ${{ secrets.REPO_PRINCIPAL }}
 
     steps:
       - uses: actions/checkout@v7
