@@ -1,5 +1,6 @@
 """Header View."""
 
+from pyfiglet import Figlet
 from rich.text import Text
 from textual.containers import Container, Horizontal, Vertical
 from textual.widgets import (
@@ -39,17 +40,24 @@ GOOGLE_BANNER_TEXT = [
 
 def get_organization_view() -> Container:
     """Builds the organization view."""
-    ORGANIZATION = get_organization_data(GCP_ORGANIZATION)
+    organization = get_organization_data(GCP_ORGANIZATION)
+    figlet = Figlet(font="slant")
+
     return Container(
-        Vertical(
-            Static(Text.assemble(*GOOGLE_BANNER_TEXT), id="google-header"),
-            Horizontal(
-                Label("Name:", classes="text-primary header-label"),
-                Label(f"{ORGANIZATION.display_name}", classes="foreground"),
+        Horizontal(
+            Vertical(
+                Static(Text.assemble(*GOOGLE_BANNER_TEXT), id="google-header"),
+                Horizontal(
+                    Label("Name:", classes="text-primary header-label"),
+                    Label(f"{organization.display_name}", classes="foreground"),
+                ),
+                Horizontal(
+                    Label("ID:", classes="text-primary header-label"),
+                    Label(f"{organization.name}", classes="foreground"),
+                ),
             ),
             Horizontal(
-                Label("ID:", classes="text-primary header-label"),
-                Label(f"{ORGANIZATION.name}", classes="foreground"),
+                Label(f"{figlet.renderText('Bellanov')}", classes="text-primary"),
             ),
         ),
         id="header-container",

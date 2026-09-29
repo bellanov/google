@@ -33,6 +33,7 @@ dev = [
     "ipython",
     "isort",
     "mypy",
+    "pyfiglet",
     "pydantic",
     "pydantic-settings",
     "pytest",
