@@ -2,4 +2,4 @@
 #
 # Format Code Base.
 
-terraform fmt -recursive terraform/
+terraform fmt -recursive infrastructure/

@@ -2,4 +2,4 @@
 #
 # Lint Code Base.
 
-terraform fmt -check -recursive terraform/
+terraform fmt -check -recursive infrastructure/
