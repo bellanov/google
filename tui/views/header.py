@@ -8,8 +8,8 @@ from textual.widgets import (
     Static,
 )
 
-from tui.domain.controllers.organization import get_organization_data
-from tui.domain.models.settings import SETTINGS
+from tui.controllers.organization import get_organization_data
+from tui.models.settings import SETTINGS
 
 GCP_ORGANIZATION = SETTINGS.gcp_organization
 

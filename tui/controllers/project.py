@@ -4,7 +4,7 @@ import logging
 
 from google.cloud import resourcemanager_v3
 from google.cloud.resourcemanager_v3.types import Project
-from tui.domain.models.settings import SETTINGS
+from tui.models.settings import SETTINGS
 
 GCP_ORGANIZATION = SETTINGS.gcp_organization
 

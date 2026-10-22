@@ -3,8 +3,8 @@
 from typing import Generator
 
 from google.cloud import resourcemanager_v3
-from tui.domain.models.folder import Folder
-from tui.domain.models.settings import SETTINGS
+from tui.models.folder import Folder
+from tui.models.settings import SETTINGS
 
 GCP_ORGANIZATION_JSON = SETTINGS.gcp_organization_json
 

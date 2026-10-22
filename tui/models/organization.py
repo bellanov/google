@@ -2,7 +2,7 @@
 
 from pydantic import Field
 
-from tui.domain.models.camel_case import CamelCaseModel
+from tui.models.camel_case import CamelCaseModel
 
 GCP_ORGANIZATION = r"^organizations/\d+$"
 

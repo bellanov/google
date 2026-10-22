@@ -5,7 +5,7 @@ from textual.widgets import (
     Markdown,
 )
 
-from tui.domain.controllers.project import get_projects_markdown
+from tui.controllers.project import get_projects_markdown
 
 
 def get_projects_view() -> Container:
