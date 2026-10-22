@@ -69,10 +69,10 @@ gcp
 
 ```
 
-| Environment | Description                                                       |
-| ----------- | ----------------------------------------------------------------- |
-| _.github_   | Contains GitHub **workflows** for CI/CD.                          |
-| _diagrams_  | Contains project architecture **diagrams**.                       |
-| _docs_      | Contains project **documentation**.                               |
-| _tui_       | Contains project **source code** for the Terminal User Interface. |
+| Environment      | Description                                                       |
+| ---------------- | ----------------------------------------------------------------- |
+| _.github_        | Contains GitHub **workflows** for CI/CD.                          |
+| _diagrams_       | Contains project architecture **diagrams**.                       |
+| _docs_           | Contains project **documentation**.                               |
+| _tui_            | Contains project **source code** for the Terminal User Interface. |
 | _infrastructure_ | Contains **Terraform configurations** for different environments. |
