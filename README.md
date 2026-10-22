@@ -56,14 +56,12 @@ gcp
 │   └── workflows
 ├── diagrams
 ├── docs
-├── cli
-│   └── domain
-│       ├── models
-│   └──  services
-│   └──  tests
-│       ├── models
-│       └── services
-├── terraform
+├── tui
+│   └── models
+│   └── views
+│   └── controllers
+│   └── tests
+├── infrastructure
 │   └── environments
 │       ├── development
 │       ├── production
