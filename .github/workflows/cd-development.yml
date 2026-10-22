@@ -6,12 +6,12 @@ on:
   push:
     branches: ["main"]
     paths:
-      - "terraform/environments/development/**"
+      - "infrastructure/environments/development/**"
       - ".github/workflows/cd-development.yml"
   pull_request:
     branches: ["main"]
     paths:
-      - "terraform/environments/development/**"
+      - "infrastructure/environments/development/**"
       - ".github/workflows/cd-development.yml"
 
 permissions:

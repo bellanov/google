@@ -6,11 +6,11 @@ on:
   push:
     branches: ["main"]
     paths:
-      - "terraform/environments/production/**"
+      - "infrastructure/environments/production/**"
   pull_request:
     branches: ["main"]
     paths:
-      - "terraform/environments/production/**"
+      - "infrastructure/environments/production/**"
 
 permissions:
   contents: read
