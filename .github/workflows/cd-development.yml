@@ -28,7 +28,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: terraform/environments/development
+        working-directory: infrastructure/environments/development
 
     steps:
       # Checkout the repository to the GitHub Actions runner
