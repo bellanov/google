@@ -74,5 +74,5 @@ gcp
 | _.github_   | Contains GitHub **workflows** for CI/CD.                          |
 | _diagrams_  | Contains project architecture **diagrams**.                       |
 | _docs_      | Contains project **documentation**.                               |
-| _cli_       | Contains project **source code** for GCP tooling.                 |
-| _terraform_ | Contains **Terraform configurations** for different environments. |
+| _tui_       | Contains project **source code** for the Terminal User Interface. |
+| _infrastructure_ | Contains **Terraform configurations** for different environments. |
