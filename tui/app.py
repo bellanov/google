@@ -27,13 +27,7 @@ class TUIApp(App):
     CSS_PATH = "app.tcss"
 
     BINDINGS = [
-        Binding(key="q", action="quit", description="Quit the app"),
-        Binding(
-            key="question_mark",
-            action="help",
-            description="Show help screen",
-            key_display="?",
-        ),
+        Binding(key="q", action="quit", description="Quit the app")
     ]
 
     def compose(self) -> ComposeResult:
