@@ -3,7 +3,7 @@
 import pytest
 from pydantic import ValidationError
 
-from tui.domain.models.project import Project
+from tui.models.project import Project
 
 
 @pytest.mark.unit

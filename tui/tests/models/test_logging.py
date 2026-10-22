@@ -4,7 +4,7 @@ import logging
 
 import pytest
 
-from tui.domain.models.logging import LOG_FORMAT_DEBUG, LogLevels, configure_logging
+from tui.models.logging import LOG_FORMAT_DEBUG, LogLevels, configure_logging
 
 
 @pytest.mark.unit

@@ -5,7 +5,7 @@ from textual.widgets import (
     Markdown,
 )
 
-from tui.domain.controllers.folder import get_folders_markdown
+from tui.controllers.folder import get_folders_markdown
 
 
 def get_folders_view() -> Container:

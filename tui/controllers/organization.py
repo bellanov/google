@@ -1,7 +1,7 @@
 """Organization Controller."""
 
 from google.cloud import resourcemanager_v3
-from tui.domain.models.organization import Organization
+from tui.models.organization import Organization
 
 
 def get_organization_data(organization_id: str) -> Organization:
