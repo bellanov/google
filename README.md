@@ -51,7 +51,7 @@ The project _architecture_ is summarized below.
 The project _structure_ is summarized below.
 
 ```sh
-gcp
+google
 ├── .github
 │   └── workflows
 ├── diagrams
