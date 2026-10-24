@@ -1,6 +1,6 @@
-# Terminal User Interface (TUI) 
+# Terminal User Interface (TUI)
 
-*Terminal User Interface (TUI)* that visualizes **Google Cloud Platform (GCP)** resources.
+_Terminal User Interface (TUI)_ that visualizes **Google Cloud Platform (GCP)** resources.
 
 ## Execution
 
