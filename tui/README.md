@@ -45,11 +45,3 @@ tui/scripts/test.sh
 tui/scripts/lint.sh
 tui/scripts/format.sh
 ```
-
-### Windows
-
-```sh
-tui\scripts\test.ps1
-tui\scripts\lint.ps1
-tui\scripts\format.ps1
-```
