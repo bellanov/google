@@ -26,9 +26,7 @@ COMPONENTS = {
 class TUIApp(App):
     CSS_PATH = "app.tcss"
 
-    BINDINGS = [
-        Binding(key="q", action="quit", description="Quit the app")
-    ]
+    BINDINGS = [Binding(key="q", action="quit", description="Quit the app")]
 
     def compose(self) -> ComposeResult:
         yield COMPONENTS["Header"]["Google"]
