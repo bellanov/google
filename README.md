@@ -2,7 +2,7 @@
 
 **Terminal User Interface (TUI)** to visualize resources on _Google Cloud Platform (GCP)_.
 
-# Requirements
+# Dependencies
 
 The project requires the following tools to be installed:
 
