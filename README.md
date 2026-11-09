@@ -6,7 +6,7 @@
 
 The project requires the following tools to be installed:
 
-- Python 3.14
+- [Python 3.14](https://www.python.org/downloads/release/python-3140/)
 
 ## Environments
 
