@@ -2,6 +2,12 @@
 
 **Terminal User Interface (TUI)** to visualize resources on _Google Cloud Platform (GCP)_.
 
+# Requirements
+
+The project requires the following tools to be installed:
+
+- Python 3.14
+
 ## Environments
 
 The project is deployed across multiple _environments_, each of which has its own Terraform configuration.
