@@ -37,7 +37,7 @@ locals {
 
     tester = {
       description = "Tester Service Account"
-      roles = []
+      roles       = []
     }
 
     operations = {
