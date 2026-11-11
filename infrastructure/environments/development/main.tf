@@ -31,17 +31,13 @@ locals {
     developer = {
       description = "Developer Service Account"
       roles = [
-        "roles/iam.serviceAccountUser",
-        "roles/iam.serviceAccountTokenCreator",
-        "roles/iam.workloadIdentityUser",
+        "roles/resourcemanager.viewer"
       ]
     }
 
     tester = {
       description = "Tester Service Account"
-      roles = [
-        "roles/iam.serviceAccountUser"
-      ]
+      roles = []
     }
 
     operations = {
