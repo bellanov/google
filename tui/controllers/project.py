@@ -37,3 +37,5 @@ def get_projects_for_folder(folder_id: str) -> list[Project]:
     for project in client.list_projects(request=request):
         projects.append(project)
     return projects
+
+# get_projects_markdown()
