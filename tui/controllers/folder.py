@@ -52,9 +52,7 @@ def get_folders_for_organization(organization_id: str) -> Generator[Folder, None
         yield folder
 
 
-
 from google.cloud import storage
-
 
 # Initializes the client using Application Default Credentials (ADC)
 client = storage.Client()
@@ -70,20 +68,20 @@ client = storage.Client()
 def get_project_details(project_id: str):
     # Initialize the ProjectsClient
     client = resourcemanager_v3.ProjectsClient()
-    
+
     # Format the request payload name field correctly
-    request = resourcemanager_v3.GetProjectRequest(
-        name=f"projects/{project_id}"
-    )
-    
+    request = resourcemanager_v3.GetProjectRequest(name=f"projects/{project_id}")
+
     # Fetch data
     project_info = client.get_project(request=request)
     print(f"Project Number: {project_info.name}")
     print(f"State: {project_info.state}")
-    
+
     return project_info
 
+
 get_project_details(SETTINGS.gcp_project)  # Replace with your actual project ID
+
 
 def list_folder_contents(folder_id: str):
     # 1. Fetch and list all Sub-Folders
@@ -91,7 +89,7 @@ def list_folder_contents(folder_id: str):
     folder_request = resourcemanager_v3.ListFoldersRequest(
         parent=f"folders/{folder_id}"
     )
-    
+
     print("--- SUB-FOLDERS ---")
     for folder in folders_client.list_folders(request=folder_request):
         print(f"Name: {folder.display_name} | ID: {folder.name.split('/')[-1]}")
@@ -101,9 +99,10 @@ def list_folder_contents(folder_id: str):
     project_request = resourcemanager_v3.SearchProjectsRequest(
         query=f"parent:folders/{folder_id}"
     )
-    
+
     print("\n--- PROJECTS ---")
     for project in projects_client.search_projects(request=project_request):
         print(f"Name: {project.display_name} | ID: {project.project_id}")
+
 
 list_folder_contents("283856628432")  # Replace with your actual folder ID

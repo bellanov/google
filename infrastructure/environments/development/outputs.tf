@@ -9,11 +9,6 @@ output "service_accounts" {
   value       = { for sa in resource.google_service_account.service_account : sa.account_id => sa }
 }
 
-output "roles" {
-  description = "List of IAM members"
-  value       = { for member in resource.google_project_iam_member.developer : member.id => member }
-}
-
 output "tags" {
   description = "List of created tags"
   value = {
