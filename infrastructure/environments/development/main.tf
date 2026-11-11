@@ -13,16 +13,6 @@ resource "google_service_account" "service_account" {
   display_name = each.value.description
 }
 
-resource "google_project_iam_member" "developer" {
-  for_each = toset([
-    "roles/resourcemanager.viewer"
-  ])
-
-  project = var.project_id
-  role    = each.value
-  member  = "serviceAccount:developer@${var.project_id}.iam.gserviceaccount.com"
-}
-
 locals {
   services = []
 
