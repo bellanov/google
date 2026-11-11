@@ -24,6 +24,11 @@ gcloud projects add-iam-policy-binding $GCP_PROJECT \
   --member="${WIF_PRINCIPAL}" \
   --role="roles/iam.serviceAccountAdmin"
 
+# Grant permissions for IAM policy management
+gcloud projects add-iam-policy-binding $GCP_PROJECT \
+  --member="${WIF_PRINCIPAL}" \
+  --role="roles/resourcemanager.projectIamAdmin"
+
 # Grant permissions for roles management
 gcloud projects add-iam-policy-binding $GCP_PROJECT \
   --member="${WIF_PRINCIPAL}" \
