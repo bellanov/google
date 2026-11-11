@@ -46,12 +46,6 @@ In this setup, the Workload Identity Pool has direct IAM permissions on Google C
 | _tui-ci-\<environment\>_ | Continuous Integration workflow for testing and validating the _Terminal User Interface (TUI)_. |
 | _cd-\<environment\>_     | Continuous Deployment workflow for _Terraform_ deployments.                                     |
 
-## Architecture
-
-The project _architecture_ is summarized below.
-
-![Project Architecture](./diagrams/MVC.svg)
-
 ## Project Structure
 
 The project _structure_ is summarized below.
@@ -82,3 +76,9 @@ google
 | _docs_           | Contains project **documentation**.                               |
 | _tui_            | Contains project **source code** for the Terminal User Interface. |
 | _infrastructure_ | Contains **Terraform configurations** for different environments. |
+
+## Architecture
+
+The project _architecture_ is summarized below.
+
+![Project Architecture](./diagrams/MVC.svg)

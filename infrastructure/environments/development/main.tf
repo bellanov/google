@@ -13,40 +13,22 @@ resource "google_service_account" "service_account" {
   display_name = each.value.description
 }
 
-resource "google_tags_tag_key" "tag_key" {
-  parent     = "projects/${var.project_id}"
-  short_name = "environment"
-}
+resource "google_project_iam_member" "developer" {
+  for_each = toset([
+    "roles/resourcemanager.viewer"
+  ])
 
-resource "google_tags_tag_value" "tag_value" {
-  parent     = "tagKeys/${google_tags_tag_key.tag_key.name}"
-  short_name = "development"
+  project = var.project_id
+  role    = each.value
+  member  = "serviceAccount:developer@${var.project_id}.iam.gserviceaccount.com"
 }
 
 locals {
   services = []
 
-  # TODO: Dynamically generate service accounts and roles based on a map of service accounts and their roles
   service_accounts = {
     developer = {
       description = "Developer Service Account"
-      roles = [
-        "roles/iam.serviceAccountUser",
-        "roles/iam.serviceAccountTokenCreator",
-        "roles/iam.workloadIdentityUser",
-      ]
-    }
-
-    tester = {
-      description = "Tester Service Account"
-      roles = [
-        "roles/iam.serviceAccountUser"
-      ]
-    }
-
-    operations = {
-      description = "Operations Service Account"
-      roles       = []
     }
   }
 
